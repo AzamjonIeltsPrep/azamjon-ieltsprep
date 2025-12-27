@@ -20,12 +20,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Function to start a test
     function startTest() {
-        alert('Starting IELTS Practice Test! This feature will be available soon.\n\nIn the meantime, check out our preparation materials.');
-        
-        // Simulate progress update
+        // Update progress
         updateProgress(10);
         
-        // In a real app, this would redirect to a test page
+        // Redirect to IELTS Reading Test
+        window.location.href = 'tests/reading-1.html';
+        
         console.log('Test started at:', new Date().toLocaleTimeString());
     }
     
@@ -129,3 +129,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 1000);
     }
 });
+    
