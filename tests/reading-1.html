@@ -5,6 +5,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IELTS Reading Test 1 - Azamjon IELTS Prep</title>
     <link rel="stylesheet" href="../style.css">
+    <style>
+        .timer {
+            background: #1a2980;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .passage-container {
+            background: #f8f9fa;
+            border-left: 5px solid #1a2980;
+            padding: 25px;
+            margin: 25px 0;
+            line-height: 1.8;
+        }
+        .question-block {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .option {
+            margin: 12px 0;
+            padding: 10px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .option:hover {
+            background: #f0f8ff;
+            border-color: #1a2980;
+        }
+        .option.selected {
+            background: #e8f5e9;
+            border-color: #4caf50;
+        }
+        .submit-btn {
+            background: linear-gradient(90deg, #1a2980, #26d0ce);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 20px 0;
+            display: block;
+            width: 200px;
+        }
+        .result-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-top: 30px;
+            text-align: center;
+        }
+        .band-score {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #1a2980;
+            margin: 10px 0;
+        }
+        .correct-answer {
+            color: #2e7d32;
+            font-weight: bold;
+        }
+        .incorrect-answer {
+            color: #c62828;
+            text-decoration: line-through;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -12,81 +88,315 @@
             <div class="logo">
                 <h1><a href="../index.html" style="color: white; text-decoration: none;">Azamjon IELTS Prep</a></h1>
             </div>
-            <a href="../index.html" style="color: white; text-decoration: none;">← Back to Home</a>
+            <div style="display: flex; gap: 15px; align-items: center;">
+                <div class="timer" id="timer">60:00</div>
+                <a href="../index.html" style="color: white; text-decoration: none; font-weight: bold;">← Back to Home</a>
+            </div>
         </nav>
     </header>
 
-    <main style="max-width: 800px; margin: 2rem auto; padding: 2rem;">
-        <h1>IELTS Reading Practice Test 1</h1>
-        <p style="color: #666; margin-bottom: 2rem;">Time: 60 minutes | Questions: 40</p>
+    <main style="max-width: 900px; margin: 2rem auto; padding: 0 20px;">
+        <h1>IELTS Academic Reading Practice Test 1</h1>
+        <p><strong>Time:</strong> 60 minutes | <strong>Questions:</strong> 13 | <strong>Band Score Estimation</strong></p>
         
-        <div class="test-instructions" style="background: #f0f8ff; padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem;">
-            <h3>Instructions:</h3>
-            <p>Read the passage below and answer questions 1-5. Choose the correct letter, A, B, C or D.</p>
+        <div class="passage-container">
+            <h2>Passage: The History of Chocolate</h2>
+            <p><strong>Chocolate</strong> has a history that spans over 3,000 years. The earliest evidence of chocolate consumption dates back to the ancient Maya and Aztec civilizations in Mesoamerica. These cultures prepared chocolate as a bitter drink, often mixed with spices or corn puree.</p>
+            
+            <p>When Spanish explorers arrived in the Americas in the 16th century, they brought chocolate back to Europe. Initially consumed primarily by royalty and the upper classes, chocolate gradually became more widely available with the advent of the Industrial Revolution. The invention of the cocoa press in 1828 by Coenraad van Houten revolutionized chocolate production, allowing for the creation of cocoa powder and solid chocolate.</p>
+            
+            <p>Today, chocolate is enjoyed worldwide in various forms, from dark and milk chocolate to white chocolate. The global chocolate industry is worth over $100 billion annually, with Switzerland, Belgium, and Germany leading in per capita consumption.</p>
+            
+            <p><strong>Key developments in chocolate history:</strong></p>
+            <ul>
+                <li><strong>1500 BCE:</strong> First evidence of cocoa consumption by Olmecs</li>
+                <li><strong>600 CE:</strong> Maya establish cocoa plantations</li>
+                <li><strong>1502:</strong> Columbus encounters cocoa beans</li>
+                <li><strong>1828:</strong> Cocoa press invented</li>
+                <li><strong>1847:</strong> First solid chocolate bar created</li>
+                <li><strong>1875:</strong> Milk chocolate invented</li>
+            </ul>
         </div>
-        
-        <div class="passage" style="background: #f9f9f9; padding: 2rem; border-radius: 10px; margin-bottom: 2rem;">
-            <h3>The History of the IELTS Test</h3>
-            <p>The International English Language Testing System (IELTS) was established in 1989. It is jointly managed by the British Council, IDP: IELTS Australia, and Cambridge Assessment English...</p>
-            <p>IELTS is accepted by most Australian, British, Canadian, European, Irish and New Zealand academic institutions, by over 3,000 academic institutions in the United States, and by various professional organisations across the world.</p>
+
+        <!-- Questions 1-5: True/False/Not Given -->
+        <div class="question-block">
+            <h3>Questions 1-5</h3>
+            <p>Do the following statements agree with the information given in the passage?</p>
+            <p>Write:</p>
+            <ul>
+                <li><strong>TRUE</strong> if the statement agrees with the information</li>
+                <li><strong>FALSE</strong> if the statement contradicts the information</li>
+                <li><strong>NOT GIVEN</strong> if there is no information on this</li>
+            </ul>
+            
+            <div class="question">
+                <p><strong>1.</strong> Chocolate was first consumed over 3,000 years ago.</p>
+                <div class="option" onclick="selectAnswer(1, 'TRUE')">TRUE</div>
+                <div class="option" onclick="selectAnswer(1, 'FALSE')">FALSE</div>
+                <div class="option" onclick="selectAnswer(1, 'NOT GIVEN')">NOT GIVEN</div>
+            </div>
+            
+            <div class="question">
+                <p><strong>2.</strong> The Maya and Aztecs consumed chocolate as a sweet dessert.</p>
+                <div class="option" onclick="selectAnswer(2, 'TRUE')">TRUE</div>
+                <div class="option" onclick="selectAnswer(2, 'FALSE')">FALSE</div>
+                <div class="option" onclick="selectAnswer(2, 'NOT GIVEN')">NOT GIVEN</div>
+            </div>
+            
+            <div class="question">
+                <p><strong>3.</strong> Chocolate became popular in Europe immediately after being introduced.</p>
+                <div class="option" onclick="selectAnswer(3, 'TRUE')">TRUE</div>
+                <div class="option" onclick="selectAnswer(3, 'FALSE')">FALSE</div>
+                <div class="option" onclick="selectAnswer(3, 'NOT GIVEN')">NOT GIVEN</div>
+            </div>
+            
+            <div class="question">
+                <p><strong>4.</strong> The cocoa press made chocolate cheaper to produce.</p>
+                <div class="option" onclick="selectAnswer(4, 'TRUE')">TRUE</div>
+                <div class="option" onclick="selectAnswer(4, 'FALSE')">FALSE</div>
+                <div class="option" onclick="selectAnswer(4, 'NOT GIVEN')">NOT GIVEN</div>
+            </div>
+            
+            <div class="question">
+                <p><strong>5.</strong> Switzerland consumes the most chocolate per person.</p>
+                <div class="option" onclick="selectAnswer(5, 'TRUE')">TRUE</div>
+                <div class="option" onclick="selectAnswer(5, 'FALSE')">FALSE</div>
+                <div class="option" onclick="selectAnswer(5, 'NOT GIVEN')">NOT GIVEN</div>
+            </div>
         </div>
-        
-        <div class="question" style="margin-bottom: 1.5rem;">
-            <h4>Question 1: When was IELTS established?</h4>
-            <label style="display: block; margin: 0.5rem 0;">
-                <input type="radio" name="q1" value="a"> A) 1979
-            </label>
-            <label style="display: block; margin: 0.5rem 0;">
-                <input type="radio" name="q1" value="b"> B) 1989
-            </label>
-            <label style="display: block; margin: 0.5rem 0;">
-                <input type="radio" name="q1" value="c"> C) 1999
-            </label>
-            <label style="display: block; margin: 0.5rem 0;">
-                <input type="radio" name="q1" value="d"> D) 2009
-            </label>
+
+        <!-- Questions 6-10: Multiple Choice -->
+        <div class="question-block">
+            <h3>Questions 6-10</h3>
+            <p>Choose the correct letter, A, B, C, or D.</p>
+            
+            <div class="question">
+                <p><strong>6.</strong> When did Columbus first encounter cocoa beans?</p>
+                <div class="option" onclick="selectMCQ(6, 'A')">A) 1500 BCE</div>
+                <div class="option" onclick="selectMCQ(6, 'B')">B) 600 CE</div>
+                <div class="option" onclick="selectMCQ(6, 'C')">C) 1502</div>
+                <div class="option" onclick="selectMCQ(6, 'D')">D) 1828</div>
+            </div>
+            
+            <div class="question">
+                <p><strong>7.</strong> What invention revolutionized chocolate production in 1828?</p>
+                <div class="option" onclick="selectMCQ(7, 'A')">A) Chocolate bar</div>
+                <div class="option" onclick="selectMCQ(7, 'B')">B) Cocoa press</div>
+                <div class="option" onclick="selectMCQ(7, 'C')">C) Milk chocolate recipe</div>
+                <div class="option" onclick="selectMCQ(7, 'D')">D) Cocoa plantation</div>
+            </div>
+            
+            <div class="question">
+                <p><strong>8.</strong> Who invented milk chocolate?</p>
+                <div class="option" onclick="selectMCQ(8, 'A')">A) The Maya</div>
+                <div class="option" onclick="selectMCQ(8, 'B')">B) Spanish explorers</div>
+                <div class="option" onclick="selectMCQ(8, 'C')">C) Coenraad van Houten</div>
+                <div class="option" onclick="selectMCQ(8, 'D')">D) Not mentioned</div>
+            </div>
+            
+            <div class="question">
+                <p><strong>9.</strong> What was the original form of chocolate consumption?</p>
+                <div class="option" onclick="selectMCQ(9, 'A')">A) Solid bar</div>
+                <div class="option" onclick="selectMCQ(9, 'B')">B) Sweet candy</div>
+                <div class="option" onclick="selectMCQ(9, 'C')">C) Bitter drink</div>
+                <div class="option" onclick="selectMCQ(9, 'D')">D) Cocoa powder</div>
+            </div>
+            
+            <div class="question">
+                <p><strong>10.</strong> Which country is NOT mentioned as a leading chocolate consumer?</p>
+                <div class="option" onclick="selectMCQ(10, 'A')">A) Switzerland</div>
+                <div class="option" onclick="selectMCQ(10, 'B')">B) Belgium</div>
+                <div class="option" onclick="selectMCQ(10, 'C')">C) Germany</div>
+                <div class="option" onclick="selectMCQ(10, 'D')">D) France</div>
+            </div>
         </div>
+
+        <!-- Questions 11-13: Short Answer -->
+        <div class="question-block">
+            <h3>Questions 11-13</h3>
+            <p>Answer the questions below using NO MORE THAN THREE WORDS from the passage.</p>
+            
+            <div class="question">
+                <p><strong>11.</strong> What was often mixed with chocolate in ancient Mesoamerica?</p>
+                <input type="text" id="q11" placeholder="Type your answer..." style="width: 300px; padding: 10px; margin: 10px 0;">
+            </div>
+            
+            <div class="question">
+                <p><strong>12.</strong> Which revolution made chocolate more widely available?</p>
+                <input type="text" id="q12" placeholder="Type your answer..." style="width: 300px; padding: 10px; margin: 10px 0;">
+            </div>
+            
+            <div class="question">
+                <p><strong>13.</strong> What is the approximate value of the global chocolate industry?</p>
+                <input type="text" id="q13" placeholder="Type your answer..." style="width: 300px; padding: 10px; margin: 10px 0;">
+            </div>
+        </div>
+
+        <button class="submit-btn" onclick="submitTest()">Submit Test & Get Score</button>
         
-        <button onclick="submitTest()" class="cta-button" style="margin-right: 1rem;">Submit Answer</button>
-        <button onclick="window.location.href='../index.html'" style="padding: 0.8rem 1.5rem; background: #666; color: white; border: none; border-radius: 5px; cursor: pointer;">Back to Home</button>
-        
-        <div id="result" style="margin-top: 2rem; padding: 1.5rem; background: #e8f5e9; border-radius: 10px; display: none;"></div>
+        <div id="result-container" class="result-card" style="display: none;">
+            <h2>Your IELTS Reading Score</h2>
+            <div class="band-score" id="bandScore">0.0</div>
+            <p>Band Score: <span id="bandLevel">Beginner</span></p>
+            <p>Correct Answers: <span id="correctCount">0</span> out of 13</p>
+            
+            <div style="text-align: left; margin: 20px 0;">
+                <h3>Answer Key:</h3>
+                <p>1. <span class="correct-answer">TRUE</span></p>
+                <p>2. <span class="correct-answer">FALSE</span></p>
+                <p>3. <span class="correct-answer">FALSE</span></p>
+                <p>4. <span class="correct-answer">NOT GIVEN</span></p>
+                <p>5. <span class="correct-answer">TRUE</span></p>
+                <p>6. <span class="correct-answer">C</span></p>
+                <p>7. <span class="correct-answer">B</span></p>
+                <p>8. <span class="correct-answer">D</span></p>
+                <p>9. <span class="correct-answer">C</span></p>
+                <p>10. <span class="correct-answer">D</span></p>
+                <p>11. <span class="correct-answer">spices or corn</span></p>
+                <p>12. <span class="correct-answer">Industrial Revolution</span></p>
+                <p>13. <span class="correct-answer">$100 billion</span></p>
+            </div>
+            
+            <button onclick="window.location.href='../index.html'" class="cta-button" style="margin: 10px;">Back to Home</button>
+            <button onclick="resetTest()" class="cta-button" style="background: #666; margin: 10px;">Try Again</button>
+        </div>
     </main>
 
     <script>
-        function submitTest() {
-            const selected = document.querySelector('input[name="q1"]:checked');
-            const resultDiv = document.getElementById('result');
+        // Timer
+        let timeLeft = 60 * 60; // 60 minutes in seconds
+        const timerElement = document.getElementById('timer');
+        
+        function updateTimer() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            timerElement.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
             
-            if (!selected) {
-                alert('Please select an answer first!');
-                return;
-            }
-            
-            const correctAnswer = 'b'; // 1989 is correct
-            
-            if (selected.value === correctAnswer) {
-                resultDiv.innerHTML = `
-                    <h3 style="color: #2e7d32;">✅ Correct!</h3>
-                    <p>The IELTS test was established in <strong>1989</strong>.</p>
-                    <p>Your progress has been saved. You've completed 25% of your first test!</p>
-                    <button onclick="window.location.href='../index.html'" class="cta-button">Continue Learning</button>
-                `;
-                
-                // Save progress
-                if (localStorage.getItem('ieltsProgress')) {
-                    let progress = parseInt(localStorage.getItem('ieltsProgress'));
-                    localStorage.setItem('ieltsProgress', Math.min(progress + 15, 100));
-                }
+            if (timeLeft > 0) {
+                timeLeft--;
+                setTimeout(updateTimer, 1000);
             } else {
-                resultDiv.innerHTML = `
-                    <h3 style="color: #c62828;">❌ Incorrect</h3>
-                    <p>The correct answer is <strong>B) 1989</strong>.</p>
-                    <p>Don't worry! Keep practicing. You'll improve with each attempt.</p>
-                `;
+                timerElement.textContent = "TIME'S UP!";
+                timerElement.style.background = "#c62828";
+            }
+        }
+        
+        updateTimer();
+        
+        // Answer tracking
+        let answers = {
+            1: null, 2: null, 3: null, 4: null, 5: null,
+            6: null, 7: null, 8: null, 9: null, 10: null,
+            11: '', 12: '', 13: ''
+        };
+        
+        function selectAnswer(question, answer) {
+            answers[question] = answer;
+            
+            // Remove selected class from all options for this question
+            const options = document.querySelectorAll(`.question:nth-child(${question}) .option`);
+            options.forEach(opt => opt.classList.remove('selected'));
+            
+            // Add selected class to clicked option
+            event.target.classList.add('selected');
+        }
+        
+        function selectMCQ(question, answer) {
+            answers[question] = answer;
+            
+            // Remove selected class from all options for this question
+            const options = document.querySelectorAll(`.question:nth-child(${question - 5}) .option`);
+            options.forEach(opt => opt.classList.remove('selected'));
+            
+            // Add selected class to clicked option
+            event.target.classList.add('selected');
+        }
+        
+        function submitTest() {
+            // Correct answers
+            const correctAnswers = {
+                1: 'TRUE', 2: 'FALSE', 3: 'FALSE', 4: 'NOT GIVEN', 5: 'TRUE',
+                6: 'C', 7: 'B', 8: 'D', 9: 'C', 10: 'D',
+                11: 'spices or corn', 12: 'Industrial Revolution', 13: '$100 billion'
+            };
+            
+            // Calculate score
+            let correctCount = 0;
+            
+            for (let i = 1; i <= 13; i++) {
+                let userAnswer = answers[i];
+                let correctAnswer = correctAnswers[i];
+                
+                if (i <= 10) {
+                    // Multiple choice and True/False questions
+                    if (userAnswer === correctAnswer) {
+                        correctCount++;
+                    }
+                } else {
+                    // Short answer questions (case insensitive, trim spaces)
+                    if (userAnswer && userAnswer.toString().toLowerCase().trim() === correctAnswer.toLowerCase()) {
+                        correctCount++;
+                    }
+                }
             }
             
-            resultDiv.style.display = 'block';
+            // Calculate band score (IELTS Reading conversion)
+            let bandScore = 0;
+            if (correctCount >= 12) bandScore = 9.0;
+            else if (correctCount >= 11) bandScore = 8.5;
+            else if (correctCount >= 10) bandScore = 8.0;
+            else if (correctCount >= 9) bandScore = 7.5;
+            else if (correctCount >= 8) bandScore = 7.0;
+            else if (correctCount >= 7) bandScore = 6.5;
+            else if (correctCount >= 6) bandScore = 6.0;
+            else if (correctCount >= 5) bandScore = 5.5;
+            else if (correctCount >= 4) bandScore = 5.0;
+            else if (correctCount >= 3) bandScore = 4.5;
+            else bandScore = 4.0;
+            
+            // Display results
+            document.getElementById('correctCount').textContent = correctCount;
+            document.getElementById('bandScore').textContent = bandScore.toFixed(1);
+            
+            let bandLevel = '';
+            if (bandScore >= 8.0) bandLevel = 'Expert User';
+            else if (bandScore >= 7.0) bandLevel = 'Good User';
+            else if (bandScore >= 6.0) bandLevel = 'Competent User';
+            else if (bandScore >= 5.0) bandLevel = 'Modest User';
+            else bandLevel = 'Limited User';
+            
+            document.getElementById('bandLevel').textContent = bandLevel;
+            document.getElementById('result-container').style.display = 'block';
+            
+            // Save progress to localStorage
+            let currentProgress = parseInt(localStorage.getItem('ieltsProgress') || '0');
+            let progressIncrease = Math.min(correctCount * 5, 30);
+            localStorage.setItem('ieltsProgress', Math.min(currentProgress + progressIncrease, 100));
+            
+            // Scroll to results
+            document.getElementById('result-container').scrollIntoView({ behavior: 'smooth' });
+            
+            // Stop timer
+            timeLeft = 0;
+        }
+        
+        function resetTest() {
+            // Reset answers
+            answers = {
+                1: null, 2: null, 3: null, 4: null, 5: null,
+                6: null, 7: null, 8: null, 9: null, 10: null,
+                11: '', 12: '', 13: ''
+            };
+            
+            // Reset UI
+            document.querySelectorAll('.option').forEach(opt => opt.classList.remove('selected'));
+            document.querySelectorAll('input[type="text"]').forEach(input => input.value = '');
+            document.getElementById('result-container').style.display = 'none';
+            
+            // Reset timer
+            timeLeft = 60 * 60;
+            timerElement.style.background = '#1a2980';
+            updateTimer();
         }
     </script>
 </body>
