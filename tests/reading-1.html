@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Reading Test 1 - Azamjon IELTS Prep</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1><a href="../index.html" style="color: white; text-decoration: none;">Azamjon IELTS Prep</a></h1>
+            </div>
+            <a href="../index.html" style="color: white; text-decoration: none;">← Back to Home</a>
+        </nav>
+    </header>
+
+    <main style="max-width: 800px; margin: 2rem auto; padding: 2rem;">
+        <h1>IELTS Reading Practice Test 1</h1>
+        <p style="color: #666; margin-bottom: 2rem;">Time: 60 minutes | Questions: 40</p>
+        
+        <div class="test-instructions" style="background: #f0f8ff; padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem;">
+            <h3>Instructions:</h3>
+            <p>Read the passage below and answer questions 1-5. Choose the correct letter, A, B, C or D.</p>
+        </div>
+        
+        <div class="passage" style="background: #f9f9f9; padding: 2rem; border-radius: 10px; margin-bottom: 2rem;">
+            <h3>The History of the IELTS Test</h3>
+            <p>The International English Language Testing System (IELTS) was established in 1989. It is jointly managed by the British Council, IDP: IELTS Australia, and Cambridge Assessment English...</p>
+            <p>IELTS is accepted by most Australian, British, Canadian, European, Irish and New Zealand academic institutions, by over 3,000 academic institutions in the United States, and by various professional organisations across the world.</p>
+        </div>
+        
+        <div class="question" style="margin-bottom: 1.5rem;">
+            <h4>Question 1: When was IELTS established?</h4>
+            <label style="display: block; margin: 0.5rem 0;">
+                <input type="radio" name="q1" value="a"> A) 1979
+            </label>
+            <label style="display: block; margin: 0.5rem 0;">
+                <input type="radio" name="q1" value="b"> B) 1989
+            </label>
+            <label style="display: block; margin: 0.5rem 0;">
+                <input type="radio" name="q1" value="c"> C) 1999
+            </label>
+            <label style="display: block; margin: 0.5rem 0;">
+                <input type="radio" name="q1" value="d"> D) 2009
+            </label>
+        </div>
+        
+        <button onclick="submitTest()" class="cta-button" style="margin-right: 1rem;">Submit Answer</button>
+        <button onclick="window.location.href='../index.html'" style="padding: 0.8rem 1.5rem; background: #666; color: white; border: none; border-radius: 5px; cursor: pointer;">Back to Home</button>
+        
+        <div id="result" style="margin-top: 2rem; padding: 1.5rem; background: #e8f5e9; border-radius: 10px; display: none;"></div>
+    </main>
+
+    <script>
+        function submitTest() {
+            const selected = document.querySelector('input[name="q1"]:checked');
+            const resultDiv = document.getElementById('result');
+            
+            if (!selected) {
+                alert('Please select an answer first!');
+                return;
+            }
+            
+            const correctAnswer = 'b'; // 1989 is correct
+            
+            if (selected.value === correctAnswer) {
+                resultDiv.innerHTML = `
+                    <h3 style="color: #2e7d32;">✅ Correct!</h3>
+                    <p>The IELTS test was established in <strong>1989</strong>.</p>
+                    <p>Your progress has been saved. You've completed 25% of your first test!</p>
+                    <button onclick="window.location.href='../index.html'" class="cta-button">Continue Learning</button>
+                `;
+                
+                // Save progress
+                if (localStorage.getItem('ieltsProgress')) {
+                    let progress = parseInt(localStorage.getItem('ieltsProgress'));
+                    localStorage.setItem('ieltsProgress', Math.min(progress + 15, 100));
+                }
+            } else {
+                resultDiv.innerHTML = `
+                    <h3 style="color: #c62828;">❌ Incorrect</h3>
+                    <p>The correct answer is <strong>B) 1989</strong>.</p>
+                    <p>Don't worry! Keep practicing. You'll improve with each attempt.</p>
+                `;
+            }
+            
+            resultDiv.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
