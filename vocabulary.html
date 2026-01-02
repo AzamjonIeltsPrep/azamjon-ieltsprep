@@ -695,282 +695,315 @@
             }
         ];
 
-        // Fill with more words (in real implementation, add 35 more)
-        for (let i = 17; i <= 50; i++) {
-            vocabularyWords.push({
-                word: `Word${i}`,
-                phonetic: "/pho·net·ic/",
-                partOfSpeech: ["noun", "verb", "adjective", "adverb"][i % 4],
-                meaning: `This is the meaning of word ${i} for IELTS preparation.`,
-                example: `This is an example sentence using <span class='highlight'>word${i}</span> in context.`,
-                difficulty: ["easy", "medium", "hard"][i % 3],
-                bookmarked: false
-            });
-        }
+       // REAL IELTS VOCABULARY WORDS 17-50
+const additionalWords = [
+    {
+        word: "Juxtaposition",
+        phonetic: "/ˌdʒʌkstəpəˈzɪʃn/",
+        partOfSpeech: "noun",
+        meaning: "The fact of two things being seen or placed close together with contrasting effect.",
+        example: "The <span class='highlight'>juxtaposition</span> of ancient and modern architecture in the city is striking.",
+        difficulty: "hard",
+        bookmarked: false
+    },
+    {
+        word: "Kaleidoscope",
+        phonetic: "/kəˈlaɪdəskəʊp/",
+        partOfSpeech: "noun",
+        meaning: "A constantly changing pattern or sequence of elements.",
+        example: "The city offers a <span class='highlight'>kaleidoscope</span> of cultural experiences.",
+        difficulty: "medium",
+        bookmarked: false
+    },
+    {
+        word: "Lucid",
+        phonetic: "/ˈluːsɪd/",
+        partOfSpeech: "adjective",
+        meaning: "Expressed clearly; easy to understand.",
+        example: "Her <span class='highlight'>lucid</span> explanation made the complex topic accessible.",
+        difficulty: "medium",
+        bookmarked: false
+    },
+    {
+        word: "Mitigate",
+        phonetic: "/ˈmɪtɪɡeɪt/",
+        partOfSpeech: "verb",
+        meaning: "Make less severe, serious, or painful.",
+        example: "New policies aim to <span class='highlight'>mitigate</span> the effects of climate change.",
+        difficulty: "medium",
+        bookmarked: false
+    },
+    {
+        word: "Nuance",
+        phonetic: "/ˈnjuːɑːns/",
+        partOfSpeech: "noun",
+        meaning: "A subtle difference in or shade of meaning, expression, or sound.",
+        example: "Understanding cultural <span class='highlight'>nuances</span> is crucial for international business.",
+        difficulty: "hard",
+        bookmarked: false
+    },
+    {
+        word: "Obfuscate",
+        phonetic: "/ˈɒbfəskeɪt/",
+        partOfSpeech: "verb",
+        meaning: "Make obscure, unclear, or unintelligible.",
+        example: "Politicians sometimes <span class='highlight'>obfuscate</span> the truth with complex language.",
+        difficulty: "hard",
+        bookmarked: false
+    },
+    {
+        word: "Paramount",
+        phonetic: "/ˈpærəmaʊnt/",
+        partOfSpeech: "adjective",
+        meaning: "More important than anything else; supreme.",
+        example: "Safety is <span class='highlight'>paramount</span> in all our operations.",
+        difficulty: "medium",
+        bookmarked: false
+    },
+    {
+        word: "Quintessential",
+        phonetic: "/ˌkwɪntɪˈsenʃl/",
+        partOfSpeech: "adjective",
+        meaning: "Representing the most perfect or typical example of a quality or class.",
+        example: "She is the <span class='highlight'>quintessential</span> professional in her field.",
+        difficulty: "hard",
+        bookmarked: false
+    },
+    {
+        word: "Resilient",
+        phonetic: "/rɪˈzɪliənt/",
+        partOfSpeech: "adjective",
+        meaning: "Able to withstand or recover quickly from difficult conditions.",
+        example: "Children are remarkably <span class='highlight'>resilient</span> to adversity.",
+        difficulty: "medium",
+        bookmarked: false
+    },
+    {
+        word: "Substantiate",
+        phonetic: "/səbˈstænʃieɪt/",
+        partOfSpeech: "verb",
+        meaning: "Provide evidence to support or prove the truth of.",
+        example: "Researchers must <span class='highlight'>substantiate</span> their claims with data.",
+        difficulty: "medium",
+        bookmarked: false
+    },
+    {
+        word: "Tangible",
+        phonetic: "/ˈtændʒəbl/",
+        partOfSpeech: "adjective",
+        meaning: "Perceptible by touch; clear and definite; real.",
+        example: "The project produced <span class='highlight'>tangible</span> results within six months.",
+        difficulty: "easy",
+        bookmarked: false
+    },
+    {
+        word: "Ubiquitous",
+        phonetic: "/juːˈbɪkwɪtəs/",
+        partOfSpeech: "adjective",
+        meaning: "Present, appearing, or found everywhere.",
+        example: "Smartphones have become <span class='highlight'>ubiquitous</span> in modern society.",
+        difficulty: "medium",
+        bookmarked: false
+    },
+    {
+        word: "Vindicate",
+        phonetic: "/ˈvɪndɪkeɪt/",
+        partOfSpeech: "verb",
+        meaning: "Clear of blame or suspicion; show to be right or justified.",
+        example: "The new evidence served to <span class='highlight'>vindicate</span> the accused.",
+        difficulty: "hard",
+        bookmarked: false
+    },
+    {
+        word: "Wary",
+        phonetic: "/ˈweəri/",
+        partOfSpeech: "adjective",
+        meaning: "Feeling or showing caution about possible dangers or problems.",
+        example: "Investors are <span class='highlight'>wary</span> of putting money into unstable markets.",
+        difficulty: "easy",
+        bookmarked: false
+    },
+    {
+        word: "Xenophobia",
+        phonetic: "/ˌzenəˈfəʊbiə/",
+        partOfSpeech: "noun",
+        meaning: "Dislike of or prejudice against people from other countries.",
+        example: "Globalization has not eliminated <span class='highlight'>xenophobia</span> in some societies.",
+        difficulty: "hard",
+        bookmarked: false
+    },
+    {
+        word: "Yield",
+        phonetic: "/jiːld/",
+        partOfSpeech: "verb",
+        meaning: "Produce or provide; give way to arguments or pressure.",
+        example: "The negotiations finally <span class='highlight'>yielded</span> a satisfactory agreement.",
+        difficulty: "easy",
+        bookmarked: false
+    },
+    {
+        word: "Zealous",
+        phonetic: "/ˈzeləs/",
+        partOfSpeech: "adjective",
+        meaning: "Having or showing zeal; intensely enthusiastic.",
+        example: "She was a <span class='highlight'>zealous</span> advocate for environmental protection.",
+        difficulty: "medium",
+        bookmarked: false
+    },
+    {
+        word: "Alleviate",
+        phonetic: "/əˈliːvieɪt/",
+        partOfSpeech: "verb",
+        meaning: "Make suffering, deficiency, or a problem less severe.",
+        example: "The medication helped <span class='highlight'>alleviate</span> his chronic pain.",
+        difficulty: "medium",
+        bookmarked: false
+    },
+    {
+        word: "Benevolent",
+        phonetic: "/bəˈnevələnt/",
+        partOfSpeech: "adjective",
+        meaning: "Well meaning and kindly; charitable.",
+        example: "The <span class='highlight'>benevolent</span> donor contributed millions to education.",
+        difficulty: "medium",
+        bookmarked: false
+    },
+    {
+        word: "Candid",
+        phonetic: "/ˈkændɪd/",
+        partOfSpeech: "adjective",
+        meaning: "Truthful and straightforward; frank.",
+        example: "In her <span class='highlight'>candid</span> interview, she discussed her struggles openly.",
+        difficulty: "easy",
+        bookmarked: false
+    },
+    {
+        word: "Deterrent",
+        phonetic: "/dɪˈterənt/",
+        partOfSpeech: "noun",
+        meaning: "A thing that discourages or is intended to discourage someone from doing something.",
+        example: "High security serves as a <span class='highlight'>deterrent</span> to potential thieves.",
+        difficulty: "medium",
+        bookmarked: false
+    },
+    {
+        word: "Empirical",
+        phonetic: "/ɪmˈpɪrɪkl/",
+        partOfSpeech: "adjective",
+        meaning: "Based on, concerned with, or verifiable by observation or experience.",
+        example: "The study provided <span class='highlight'>empirical</span> evidence supporting the theory.",
+        difficulty: "hard",
+        bookmarked: false
+    },
+    {
+        word: "Frugal",
+        phonetic: "/ˈfruːɡl/",
+        partOfSpeech: "adjective",
+        meaning: "Sparing or economical with regard to money or food.",
+        example: "His <span class='highlight'>frugal</span> lifestyle allowed him to save for early retirement.",
+        difficulty: "medium",
+        bookmarked: false
+    },
+    {
+        word: "Gregarious",
+        phonetic: "/ɡrɪˈɡeəriəs/",
+        partOfSpeech: "adjective",
+        meaning: "Fond of company; sociable.",
+        example: "His <span class='highlight'>gregarious</span> nature made him popular at social events.",
+        difficulty: "hard",
+        bookmarked: false
+    },
+    {
+        word: "Hypothesis",
+        phonetic: "/haɪˈpɒθəsɪs/",
+        partOfSpeech: "noun",
+        meaning: "A supposition or proposed explanation made on limited evidence.",
+        example: "The scientist tested her <span class='highlight'>hypothesis</span> through rigorous experiments.",
+        difficulty: "medium",
+        bookmarked: false
+    },
+    {
+        word: "Innovative",
+        phonetic: "/ˈɪnəveɪtɪv/",
+        partOfSpeech: "adjective",
+        meaning: "Featuring new methods; advanced and original.",
+        example: "The company is known for its <span class='highlight'>innovative</span> approach to design.",
+        difficulty: "easy",
+        bookmarked: false
+    },
+    {
+        word: "Judicious",
+        phonetic: "/dʒuˈdɪʃəs/",
+        partOfSpeech: "adjective",
+        meaning: "Having, showing, or done with good judgment or sense.",
+        example: "The manager made a <span class='highlight'>judicious</span> decision under pressure.",
+        difficulty: "hard",
+        bookmarked: false
+    },
+    {
+        word: "Kinetic",
+        phonetic: "/kɪˈnetɪk/",
+        partOfSpeech: "adjective",
+        meaning: "Relating to or resulting from motion.",
+        example: "The sculpture had a <span class='highlight'>kinetic</span> quality that fascinated viewers.",
+        difficulty: "hard",
+        bookmarked: false
+    },
+    {
+        word: "Lethargic",
+        phonetic: "/ləˈθɑːdʒɪk/",
+        partOfSpeech: "adjective",
+        meaning: "Affected by lethargy; sluggish and apathetic.",
+        example: "The hot weather made everyone feel <span class='highlight'>lethargic</span>.",
+        difficulty: "medium",
+        bookmarked: false
+    },
+    {
+        word: "Malleable",
+        phonetic: "/ˈmæliəbl/",
+        partOfSpeech: "adjective",
+        meaning: "Easily influenced; pliable.",
+        example: "Children's minds are <span class='highlight'>malleable</span> and absorb information quickly.",
+        difficulty: "medium",
+        bookmarked: false
+    },
+    {
+        word: "Nostalgia",
+        phonetic: "/nɒˈstældʒə/",
+        partOfSpeech: "noun",
+        meaning: "A sentimental longing for the past.",
+        example: "The old photographs filled her with <span class='highlight'>nostalgia</span>.",
+        difficulty: "easy",
+        bookmarked: false
+    },
+    {
+        word: "Oblivious",
+        phonetic: "/əˈblɪviəs/",
+        partOfSpeech: "adjective",
+        meaning: "Not aware of or not concerned about what is happening.",
+        example: "He was <span class='highlight'>oblivious</span> to the problems he was causing.",
+        difficulty: "medium",
+        bookmarked: false
+    },
+    {
+        word: "Pragmatic",
+        phonetic: "/præɡˈmætɪk/",
+        partOfSpeech: "adjective",
+        meaning: "Dealing with things sensibly and realistically.",
+        example: "Her <span class='highlight'>pragmatic</span> approach to problem-solving impressed the team.",
+        difficulty: "medium",
+        bookmarked: false
+    },
+    {
+        word: "Quintessence",
+        phonetic: "/kwɪnˈtesns/",
+        partOfSpeech: "noun",
+        meaning: "The most perfect or typical example of a quality or class.",
+        example: "This painting is the <span class='highlight'>quintessence</span> of Renaissance art.",
+        difficulty: "hard",
+        bookmarked: false
+    }
+];
 
-        // ====== APP STATE ======
-        let currentFilter = 'all';
-        let learnedWords = JSON.parse(localStorage.getItem('learnedWords') || '[]');
-        let bookmarkedWords = JSON.parse(localStorage.getItem('bookmarkedWords') || '[]');
-        let flashcardIndex = 0;
-        let flashcardWords = [...vocabularyWords];
-
-        // ====== DOM ELEMENTS ======
-        const vocabGrid = document.getElementById('vocabGrid');
-        const wordsLearnedEl = document.getElementById('words-learned');
-        const masteryLevelEl = document.getElementById('mastery-level');
-        const daysStreakEl = document.getElementById('days-streak');
-        const progressPercentageEl = document.getElementById('progress-percentage');
-        const progressBarEl = document.getElementById('learning-progress-bar');
-        const flashcardEl = document.getElementById('flashcard');
-        const flashcardWordEl = document.getElementById('flashcard-word');
-        const flashcardMeaningEl = document.getElementById('flashcard-meaning');
-
-        // ====== INITIALIZATION ======
-        document.addEventListener('DOMContentLoaded', function() {
-            renderVocabularyGrid();
-            updateProgressStats();
-            setupFlashcard();
-            loadLearningProgress();
-        });
-
-        // ====== RENDER FUNCTIONS ======
-        function renderVocabularyGrid() {
-            vocabGrid.innerHTML = '';
-            
-            const filteredWords = vocabularyWords.filter(word => {
-                if (currentFilter === 'all') return true;
-                if (currentFilter === 'bookmarked') return bookmarkedWords.includes(word.word);
-                return word.difficulty === currentFilter;
-            });
-
-            filteredWords.forEach((word, index) => {
-                const isLearned = learnedWords.includes(word.word);
-                const isBookmarked = bookmarkedWords.includes(word.word);
-                
-                const card = document.createElement('div');
-                card.className = 'vocab-card';
-                card.innerHTML = `
-                    <div class="word-header">
-                        <h2 class="word">${word.word}</h2>
-                        <button class="bookmark-btn ${isBookmarked ? 'active' : ''}" onclick="toggleBookmark('${word.word}')">
-                            <i class="fas fa-bookmark"></i>
-                        </button>
-                    </div>
-                    
-                    <div class="phonetic">
-                        ${word.phonetic}
-                        <button class="speak-btn" onclick="speakWord('${word.word}')">
-                            <i class="fas fa-volume-up"></i>
-                        </button>
-                    </div>
-                    
-                    <span class="part-of-speech">${word.partOfSpeech}</span>
-                    
-                    <p class="meaning">${word.meaning}</p>
-                    
-                    <div class="example">
-                        ${word.example}
-                    </div>
-                    
-                    <div class="vocab-footer">
-                        <div class="difficulty">
-                            <div class="difficulty-dot ${word.difficulty === 'easy' || word.difficulty === 'medium' || word.difficulty === 'hard' ? 'active' : ''}"></div>
-                            <div class="difficulty-dot ${word.difficulty === 'medium' || word.difficulty === 'hard' ? 'active medium' : ''}"></div>
-                            <div class="difficulty-dot ${word.difficulty === 'hard' ? 'active hard' : ''}"></div>
-                            <span style="margin-left: 0.5rem; color: #666; font-size: 0.9rem;">${word.difficulty}</span>
-                        </div>
-                        
-                        <button class="cta-button ${isLearned ? 'secondary' : ''}" style="padding: 0.5rem 1rem; font-size: 0.9rem;" 
-                                onclick="markAsLearned('${word.word}')">
-                            ${isLearned ? '✓ Learned' : 'Mark as Learned'}
-                        </button>
-                    </div>
-                `;
-                
-                vocabGrid.appendChild(card);
-            });
-        }
-
-        // ====== FILTER FUNCTIONS ======
-        function filterWords(filter) {
-            currentFilter = filter;
-            
-            // Update active filter button
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
-            
-            renderVocabularyGrid();
-        }
-
-        // ====== LEARNING FUNCTIONS ======
-        function markAsLearned(word) {
-            if (!learnedWords.includes(word)) {
-                learnedWords.push(word);
-                localStorage.setItem('learnedWords', JSON.stringify(learnedWords));
-                
-                // Show celebration
-                if (learnedWords.length % 10 === 0) {
-                    showNotification(`🎉 You've learned ${learnedWords.length} words!`);
-                }
-                
-                updateProgressStats();
-                renderVocabularyGrid();
-            }
-        }
-
-        function toggleBookmark(word) {
-            const index = bookmarkedWords.indexOf(word);
-            
-            if (index === -1) {
-                bookmarkedWords.push(word);
-                showNotification('📌 Word bookmarked!');
-            } else {
-                bookmarkedWords.splice(index, 1);
-            }
-            
-            localStorage.setItem('bookmarkedWords', JSON.stringify(bookmarkedWords));
-            renderVocabularyGrid();
-        }
-
-        // ====== FLASHCARD FUNCTIONS ======
-        function setupFlashcard() {
-            shuffleCards();
-            updateFlashcard();
-        }
-
-        function flipCard() {
-            flashcardEl.classList.toggle('flipped');
-            
-            if (!flashcardEl.classList.contains('flipped')) {
-                setTimeout(() => {
-                    nextCard();
-                    flashcardEl.classList.remove('flipped');
-                }, 1000);
-            }
-        }
-
-        function updateFlashcard() {
-            if (flashcardWords.length === 0) return;
-            
-            const currentWord = flashcardWords[flashcardIndex];
-            flashcardWordEl.textContent = currentWord.word;
-            flashcardMeaningEl.textContent = currentWord.meaning;
-        }
-
-        function nextCard() {
-            flashcardIndex = (flashcardIndex + 1) % flashcardWords.length;
-            updateFlashcard();
-        }
-
-        function previousCard() {
-            flashcardIndex = (flashcardIndex - 1 + flashcardWords.length) % flashcardWords.length;
-            updateFlashcard();
-        }
-
-        function shuffleCards() {
-            flashcardWords = [...vocabularyWords].sort(() => Math.random() - 0.5);
-            flashcardIndex = 0;
-            updateFlashcard();
-            showNotification('🔄 Flashcards shuffled!');
-        }
-
-        // ====== PROGRESS FUNCTIONS ======
-        function updateProgressStats() {
-            const totalWords = vocabularyWords.length;
-            const learnedCount = learnedWords.length;
-            const mastery = Math.round((learnedCount / totalWords) * 100);
-            
-            wordsLearnedEl.textContent = learnedCount;
-            masteryLevelEl.textContent = `${mastery}%`;
-            
-            // Update progress bar
-            progressPercentageEl.textContent = `${mastery}%`;
-            progressBarEl.style.width = `${mastery}%`;
-            
-            // Update streak (simplified)
-            const lastVisit = localStorage.getItem('lastVisit');
-            const today = new Date().toDateString();
-            
-            if (lastVisit !== today) {
-                const streak = parseInt(localStorage.getItem('learningStreak') || '0');
-                localStorage.setItem('learningStreak', streak + 1);
-                localStorage.setItem('lastVisit', today);
-            }
-            
-            daysStreakEl.textContent = localStorage.getItem('learningStreak') || '0';
-            
-            // Update achievements
-            updateAchievements(learnedCount);
-        }
-
-        function updateAchievements(learnedCount) {
-            const badges = document.querySelectorAll('.badge');
-            
-            if (learnedCount >= 10) document.getElementById('badge-2').classList.remove('locked');
-            if (learnedCount >= 25) document.getElementById('badge-3').classList.remove('locked');
-            if (learnedCount >= 40) document.getElementById('badge-4').classList.remove('locked');
-            if (learnedCount >= 50) document.getElementById('badge-5').classList.remove('locked');
-        }
-
-        function loadLearningProgress() {
-            const savedProgress = JSON.parse(localStorage.getItem('learningProgress') || '{}');
-            
-            if (savedProgress.lastVisit) {
-                // Check if visited today
-                const today = new Date().toDateString();
-                if (savedProgress.lastVisit === today) {
-                    learnedWords = savedProgress.learnedWords || [];
-                    bookmarkedWords = savedProgress.bookmarkedWords || [];
-                }
-            }
-        }
-
-        // ====== UTILITY FUNCTIONS ======
-        function speakWord(word) {
-            if ('speechSynthesis' in window) {
-                const utterance = new SpeechSynthesisUtterance(word);
-                utterance.rate = 0.8;
-                utterance.pitch = 1;
-                speechSynthesis.speak(utterance);
-            }
-        }
-
-        function showNotification(message) {
-            // Create notification element
-            const notification = document.createElement('div');
-            notification.style.cssText = `
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                background: var(--primary-gradient);
-                color: white;
-                padding: 1rem 2rem;
-                border-radius: 10px;
-                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-                z-index: 10000;
-                animation: slideIn 0.3s ease;
-            `;
-            
-            notification.textContent = message;
-            document.body.appendChild(notification);
-            
-            setTimeout(() => {
-                notification.remove();
-            }, 3000);
-        }
-
-        // Add CSS for animation
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes slideIn {
-                from { transform: translateX(100%); opacity: 0; }
-                to { transform: translateX(0); opacity: 1; }
-            }
-        `;
-        document.head.appendChild(style);
-    </script>
-</body>
-</html>
+// Add these real words to the vocabulary array
+vocabularyWords.push(...additionalWords);
