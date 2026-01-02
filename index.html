@@ -5,57 +5,189 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Azamjon IELTS Prep - Free IELTS Tests & Study Plans</title>
     <meta name="description" content="Free IELTS practice tests with scoring and study plans. Your progress saves automatically!">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="IELTS, IELTS preparation, free IELTS tests, IELTS practice, IELTS online, IELTS study plan, IELTS scoring, IELTS exam, IELTS speaking, IELTS writing, IELTS reading, IELTS listening">
+    <meta name="author" content="Azamjon IELTS Prep">
+    <meta name="robots" content="index, follow">
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎯</text></svg>">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <h1>Azamjon IELTS Prep</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#tests">Tests</a></li>
-                <li><a href="#scoring">Scoring</a></li>
-                <li><a href="#study-plans">Study Plans</a></li>
-                <li><a href="#progress">Progress</a></li>
-                <li><a href="vocabulary.html">📖 Vocabulary</a></li>
-            </ul>
-        </nav>
+    <!-- ====== NEW NAVIGATION BAR ====== -->
+    <header class="main-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🎯</span>
+                <span class="logo-text">Azamjon IELTS Prep</span>
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link active">Home</a>
+                <div class="nav-dropdown">
+                    <a href="tests/reading-1.html" class="nav-link">Practice Tests <i class="dropdown-arrow">▼</i></a>
+                    <div class="dropdown-menu">
+                        <a href="tests/reading-1.html">Reading Test 1</a>
+                        <a href="tests/reading-2.html">Reading Test 2</a>
+                    </div>
+                </div>
+                <a href="vocabulary.html" class="nav-link">Vocabulary</a>
+                <a href="study-plans.html" class="nav-link">Study Plans</a>
+                <a href="scoring.html" class="nav-link">Scoring Guide</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div class="mobile-nav" id="mobileNav">
+            <a href="index.html">Home</a>
+            <a href="tests/reading-1.html">Practice Tests</a>
+            <a href="vocabulary.html">Vocabulary</a>
+            <a href="study-plans.html">Study Plans</a>
+            <a href="scoring.html">Scoring Guide</a>
+        </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <h2>Prepare for IELTS with 3 Free Complete Tests</h2>
-            <p>Instant scoring, personalized study plans, and automatic progress tracking on your device.</p>
-            <button id="start-test-btn" class="cta-button">Start Free Test Now</button>
-        </section>
+    <!-- ====== HERO SECTION ====== -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Prepare for IELTS with 3 Free Complete Tests</h1>
+            <p class="hero-subtitle">Instant scoring, personalized study plans, and automatic progress tracking on your device.</p>
+            <div class="hero-cta">
+                <a href="tests/reading-1.html" class="btn btn-primary">Start Free Test Now</a>
+                <a href="vocabulary.html" class="btn btn-secondary">Learn Vocabulary</a>
+            </div>
+        </div>
+    </section>
 
-        <section id="features">
-            <div class="feature-card">
-                <h3>📝 Full-Length Tests</h3>
-                <p>3 complete IELTS tests covering all sections: Listening, Reading, Writing, Speaking.</p>
+    <!-- ====== FEATURES SECTION ====== -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">Everything You Need for IELTS Success</h2>
+            <p class="section-subtitle">Comprehensive tools and resources designed to help you achieve your target band score.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="feature-icon">📝</span>
+                    <h3>Full-Length Tests</h3>
+                    <p>3 complete IELTS tests covering all sections: Listening, Reading, Writing, Speaking.</p>
+                    <a href="tests/reading-1.html" class="btn btn-outline">Start Practice</a>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">🎯</span>
+                    <h3>Instant Scoring</h3>
+                    <p>Get detailed scores and feedback immediately after completing each section.</p>
+                    <a href="scoring.html" class="btn btn-outline">Learn More</a>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">📊</span>
+                    <h3>Study Plans</h3>
+                    <p>Personalized study schedule based on your strengths and weaknesses.</p>
+                    <a href="study-plans.html" class="btn btn-outline">View Plans</a>
+                </div>
+                
+                <div class="feature-card">
+                    <span class="feature-icon">💾</span>
+                    <h3>Auto-Save Progress</h3>
+                    <p>Your progress is automatically saved locally on your device - no login required!</p>
+                    <a href="index.html" class="btn btn-outline">Try Now</a>
+                </div>
             </div>
-            <div class="feature-card">
-                <h3>🎯 Instant Scoring</h3>
-                <p>Get detailed scores and feedback immediately after completing each section.</p>
-            </div>
-            <div class="feature-card">
-                <h3>📊 Study Plans</h3>
-                <p>Personalized study schedule based on your strengths and weaknesses.</p>
-            </div>
-            <div class="feature-card">
-                <h3>💾 Auto-Save Progress</h3>
-                <p>Your progress is automatically saved locally on your device - no login required!</p>
-            </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2024 Azamjon IELTS Prep. MIT License - Open Source Project.</p>
-        <p>Created to help students achieve their IELTS goals for free.</p>
+    <!-- ====== VOCABULARY PREVIEW ====== -->
+    <section style="
+        background: linear-gradient(135deg, rgba(26, 54, 93, 0.05) 0%, rgba(45, 156, 166, 0.05) 100%);
+        padding: var(--space-xl) var(--space-md);
+        text-align: center;
+    ">
+        <div class="container">
+            <h2>Build Your IELTS Vocabulary</h2>
+            <p style="max-width: 600px; margin: 0 auto var(--space-lg);">
+                Master 50 essential IELTS words with interactive flashcards, definitions, and example sentences.
+            </p>
+            <a href="vocabulary.html" class="btn btn-primary">Explore Vocabulary</a>
+        </div>
+    </section>
+
+    <!-- ====== FOOTER ====== -->
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Azamjon IELTS Prep</h3>
+                <p>Free, comprehensive IELTS preparation resources for students worldwide.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="tests/reading-1.html">Practice Tests</a></li>
+                    <li><a href="vocabulary.html">Vocabulary</a></li>
+                    <li><a href="study-plans.html">Study Plans</a></li>
+                    <li><a href="scoring.html">Scoring Guide</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Features</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Free IELTS Tests</a></li>
+                    <li><a href="index.html">Instant Scoring</a></li>
+                    <li><a href="index.html">Progress Tracking</a></li>
+                    <li><a href="index.html">No Login Required</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2024 Azamjon IELTS Prep. MIT License - Open Source Project.</p>
+            <p>Created to help students achieve their IELTS goals for free.</p>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- ====== JAVASCRIPT ====== -->
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileNav = document.getElementById('mobileNav');
+            
+            if (mobileMenuBtn && mobileNav) {
+                mobileMenuBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    mobileNav.classList.toggle('active');
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!event.target.closest('.header-container') && 
+                        !event.target.closest('.mobile-nav.active')) {
+                        mobileNav.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Dropdown hover effect
+            const dropdowns = document.querySelectorAll('.nav-dropdown');
+            dropdowns.forEach(dropdown => {
+                dropdown.addEventListener('mouseenter', function() {
+                    this.querySelector('.dropdown-menu').style.opacity = '1';
+                    this.querySelector('.dropdown-menu').style.visibility = 'visible';
+                    this.querySelector('.dropdown-menu').style.transform = 'translateY(0)';
+                });
+                
+                dropdown.addEventListener('mouseleave', function() {
+                    this.querySelector('.dropdown-menu').style.opacity = '0';
+                    this.querySelector('.dropdown-menu').style.visibility = 'hidden';
+                    this.querySelector('.dropdown-menu').style.transform = 'translateY(-10px)';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
