@@ -3,330 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Azamjon IELTS Prep - Modern Navbar</title>
+    <title>Azamjon IELTS Prep - Modern Design</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <style>
-        <link rel="stylesheet" href="styles.css">
-        </head>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-        
-        body {
-            background-color: #f9fafb;
-            color: #333;
-            line-height: 1.5;
-        }
-        
-        /* Main container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Modern Navbar */
-        .navbar {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 0;
-        }
-        
-        /* Logo */
-        .logo {
-            display: flex;
-            align-items: center;
-            font-weight: 600;
-            font-size: 1.5rem;
-            color: #2563EB;
-            text-decoration: none;
-        }
-        
-        .logo-icon {
-            margin-right: 8px;
-            font-size: 1.8rem;
-        }
-        
-        /* Desktop Navigation */
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        
-        .nav-link {
-            position: relative;
-            color: #4b5563;
-            font-weight: 500;
-            text-decoration: none;
-            padding: 0.5rem 0;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .nav-link:hover {
-            color: #2563EB;
-            transform: translateY(-2px);
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: #2563EB;
-            bottom: 0;
-            left: 0;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        /* CTA Button */
-        .cta-button {
-            background: linear-gradient(135deg, #2563EB 0%, #1d4ed8 100%);
+        /* Temporary inline styles for testing */
+        .test-notice {
+            background: #10b981;
             color: white;
-            border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 999px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.1);
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(37, 99, 235, 0.15);
-        }
-        
-        /* Dropdown Menu */
-        .dropdown {
-            position: relative;
-        }
-        
-        .dropdown-content {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: white;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            min-width: 280px;
-            padding: 1.5rem;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(10px);
-            transition: all 0.3s ease;
-            z-index: 10;
-        }
-        
-        .dropdown:hover .dropdown-content {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-        
-        .dropdown-item {
-            display: flex;
-            align-items: flex-start;
-            padding: 0.75rem 0;
-            border-bottom: 1px solid #f1f5f9;
-            text-decoration: none;
-            color: #4b5563;
-            transition: all 0.2s ease;
-        }
-        
-        .dropdown-item:last-child {
-            border-bottom: none;
-        }
-        
-        .dropdown-item:hover {
-            color: #2563EB;
-            padding-left: 5px;
-        }
-        
-        .dropdown-icon {
-            margin-right: 12px;
-            color: #2563EB;
-            font-size: 1.2rem;
-        }
-        
-        .dropdown-text {
-            flex: 1;
-        }
-        
-        .dropdown-title {
-            font-weight: 600;
-            margin-bottom: 2px;
-        }
-        
-        .dropdown-desc {
-            font-size: 0.8rem;
-            color: #6b7280;
-        }
-        
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #4b5563;
-        }
-        
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: white;
-            padding: 2rem;
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-            z-index: 1000;
-            overflow-y: auto;
-        }
-        
-        .mobile-menu.active {
-            transform: translateX(0);
-        }
-        
-        .mobile-menu-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
-        
-        .close-menu {
-            background: none;
-            border: none;
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: #4b5563;
-        }
-        
-        .mobile-nav-links {
-            list-style: none;
-        }
-        
-        .mobile-nav-link {
-            display: block;
-            padding: 1.2rem 0;
-            border-bottom: 1px solid #f1f5f9;
-            font-size: 1.2rem;
-            color: #4b5563;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .mobile-cta-container {
-            position: absolute;
-            bottom: 2rem;
-            left: 2rem;
-            right: 2rem;
-        }
-        
-        /* Hero Section (existing content) */
-        .hero {
-            background: linear-gradient(135deg, #2563EB 0%, #1e40af 100%);
-            color: white;
-            padding: 4rem 0;
+            padding: 10px;
             text-align: center;
-            border-radius: 0 0 20px 20px;
-            margin-bottom: 3rem;
-        }
-        
-        .hero h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-        }
-        
-        .hero-button {
-            background: white;
-            color: #2563EB;
-            border: none;
-            padding: 1rem 2rem;
-            border-radius: 999px;
             font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .hero-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Features Section */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-        
-        .feature-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .feature-card h3 {
-            color: #2563EB;
-            margin-bottom: 1rem;
-        }
-        
-        /* Responsive */
-        @media (max-width: 992px) {
-            .nav-links, .cta-button {
-                display: none;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -334,49 +24,49 @@
     <!-- Modern Navbar -->
     <nav class="navbar">
         <div class="container nav-container">
-            <a href="#" class="logo">
+            <a href="index.html" class="logo">
                 <span class="logo-icon">📘</span>
                 <span>Azamjon IELTS Prep</span>
             </a>
             
             <!-- Desktop Navigation -->
             <ul class="nav-links">
-                <li><a href="#" class="nav-link">Home</a></li>
-                <li><a href="#" class="nav-link">Courses</a></li>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="courses.html" class="nav-link">Courses</a></li>
                 
                 <!-- Practice Dropdown -->
                 <li class="dropdown">
                     <a href="#" class="nav-link">Practice</a>
                     <div class="dropdown-content">
-                        <a href="#" class="dropdown-item">
+                        <a href="reading.html" class="dropdown-item">
                             <span class="dropdown-icon">📖</span>
                             <div class="dropdown-text">
                                 <div class="dropdown-title">Reading</div>
                                 <div class="dropdown-desc">Band 6-7 | 7-8 Practice Tests</div>
                             </div>
                         </a>
-                        <a href="#" class="dropdown-item">
+                        <a href="listening.html" class="dropdown-item">
                             <span class="dropdown-icon">👂</span>
                             <div class="dropdown-text">
                                 <div class="dropdown-title">Listening</div>
                                 <div class="dropdown-desc">Full tests with audio</div>
                             </div>
                         </a>
-                        <a href="#" class="dropdown-item">
+                        <a href="writing-task-1.html" class="dropdown-item">
                             <span class="dropdown-icon">✍️</span>
                             <div class="dropdown-text">
                                 <div class="dropdown-title">Writing Task 1</div>
                                 <div class="dropdown-desc">Academic & General Training</div>
                             </div>
                         </a>
-                        <a href="#" class="dropdown-item">
+                        <a href="writing-task-2.html" class="dropdown-item">
                             <span class="dropdown-icon">📝</span>
                             <div class="dropdown-text">
                                 <div class="dropdown-title">Writing Task 2</div>
                                 <div class="dropdown-desc">Essay writing practice</div>
                             </div>
                         </a>
-                        <a href="#" class="dropdown-item">
+                        <a href="speaking.html" class="dropdown-item">
                             <span class="dropdown-icon">🗣️</span>
                             <div class="dropdown-text">
                                 <div class="dropdown-title">Speaking</div>
@@ -386,11 +76,11 @@
                     </div>
                 </li>
                 
-                <li><a href="#" class="nav-link">Resources</a></li>
-                <li><a href="#" class="nav-link">Blog</a></li>
+                <li><a href="resources.html" class="nav-link">Resources</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
             </ul>
             
-            <button class="cta-button">Free IELTS Test</button>
+            <a href="free-test.html" class="cta-button">Free IELTS Test</a>
             
             <!-- Mobile Menu Button -->
             <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
@@ -399,7 +89,7 @@
         <!-- Mobile Menu -->
         <div class="mobile-menu" id="mobileMenu">
             <div class="mobile-menu-header">
-                <a href="#" class="logo">
+                <a href="index.html" class="logo">
                     <span class="logo-icon">📘</span>
                     <span>Azamjon IELTS Prep</span>
                 </a>
@@ -407,83 +97,102 @@
             </div>
             
             <ul class="mobile-nav-links">
-                <li><a href="#" class="mobile-nav-link">Home</a></li>
-                <li><a href="#" class="mobile-nav-link">Courses</a></li>
-                <li><a href="#" class="mobile-nav-link">Practice</a></li>
-                <li><a href="#" class="mobile-nav-link">Resources</a></li>
-                <li><a href="#" class="mobile-nav-link">Blog</a></li>
+                <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+                <li><a href="courses.html" class="mobile-nav-link">Courses</a></li>
+                <li><a href="reading.html" class="mobile-nav-link">Reading</a></li>
+                <li><a href="listening.html" class="mobile-nav-link">Listening</a></li>
+                <li><a href="writing-task-1.html" class="mobile-nav-link">Writing Task 1</a></li>
+                <li><a href="writing-task-2.html" class="mobile-nav-link">Writing Task 2</a></li>
+                <li><a href="speaking.html" class="mobile-nav-link">Speaking</a></li>
+                <li><a href="resources.html" class="mobile-nav-link">Resources</a></li>
+                <li><a href="blog.html" class="mobile-nav-link">Blog</a></li>
             </ul>
             
             <div class="mobile-cta-container">
-                <button class="cta-button" style="width: 100%;">Free IELTS Test</button>
+                <a href="free-test.html" class="cta-button" style="width: 100%; text-align: center;">Free IELTS Test</a>
             </div>
         </div>
     </nav>
     
-    <!-- Hero Section (existing content) -->
+    <!-- Hero Section -->
     <header class="hero">
         <div class="container">
             <h1>Prepare for IELTS with 3 Free Complete Tests</h1>
             <p>Instant scoring, personalized study plans, and automatic progress tracking on your device.</p>
-            <button class="hero-button">Start Free Test Now</button>
+            <a href="free-test.html" class="hero-button">Start Free Test Now</a>
         </div>
     </header>
     
+    <!-- Main Content -->
     <main class="container">
+        <div class="test-notice">
+            ✅ This is the NEW version - Updated just now!
+        </div>
+        
         <section class="features">
             <div class="feature-card">
                 <h3>Full-Length Tests</h3>
                 <p>3 complete IELTS tests covering all sections: Listening, Reading, Writing, Speaking.</p>
-                <button class="cta-button" style="margin-top: 1rem;">Start Practice</button>
+                <a href="reading.html" class="cta-button" style="margin-top: 1rem;">Start Practice</a>
             </div>
             
             <div class="feature-card">
                 <h3>Instant Scoring</h3>
                 <p>Get detailed scores and feedback immediately after completing each section.</p>
-                <button class="cta-button" style="margin-top: 1rem;">Learn More</button>
+                <a href="free-test.html" class="cta-button" style="margin-top: 1rem;">Learn More</a>
             </div>
             
             <div class="feature-card">
                 <h3>Everything You Need for IELTS Success</h3>
                 <p>Comprehensive tools and resources designed to help you achieve your target band score.</p>
-                <button class="cta-button" style="margin-top: 1rem;">Explore Resources</button>
+                <a href="resources.html" class="cta-button" style="margin-top: 1rem;">Explore Resources</a>
+            </div>
+        </section>
+        
+        <!-- Practice Sections Grid -->
+        <section class="practice-grid">
+            <div class="practice-card">
+                <h2><a href="reading.html" style="color: #2563EB; text-decoration: none;">Reading Practice</a></h2>
+                <p>Master reading comprehension with academic passages and practice questions.</p>
+                <div class="band-level">Band 6-7 | 7-8</div>
+                <a href="reading.html" class="cta-button" style="margin-top: 1rem; padding: 0.5rem 1rem; font-size: 0.9rem;">Start Reading Practice</a>
+            </div>
+            
+            <div class="practice-card">
+                <h2><a href="listening.html" style="color: #2563EB; text-decoration: none;">Listening Practice</a></h2>
+                <p>Improve listening skills with audio recordings and comprehension tests.</p>
+                <div class="band-level">Full tests with audio</div>
+                <a href="listening.html" class="cta-button" style="margin-top: 1rem; padding: 0.5rem 1rem; font-size: 0.9rem;">Start Listening Practice</a>
+            </div>
+            
+            <div class="practice-card">
+                <h2><a href="writing-task-1.html" style="color: #2563EB; text-decoration: none;">Writing Practice</a></h2>
+                <p>Learn to write effective essays and reports for both Academic and General Training.</p>
+                <div class="band-level">Task 1 & Task 2</div>
+                <a href="writing-task-1.html" class="cta-button" style="margin-top: 1rem; padding: 0.5rem 1rem; font-size: 0.9rem;">Start Writing Practice</a>
+            </div>
+            
+            <div class="practice-card">
+                <h2><a href="speaking.html" style="color: #2563EB; text-decoration: none;">Speaking Practice</a></h2>
+                <p>Practice speaking with mock tests and get feedback on your pronunciation and fluency.</p>
+                <div class="band-level">Mock tests with feedback</div>
+                <a href="speaking.html" class="cta-button" style="margin-top: 1rem; padding: 0.5rem 1rem; font-size: 0.9rem;">Start Speaking Practice</a>
             </div>
         </section>
     </main>
     
-    <script>
-        // Mobile menu functionality
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const closeMenuBtn = document.getElementById('closeMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.add('active');
-        });
-        
-        closeMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.remove('active');
-        });
-        
-        // Close mobile menu when clicking on a link
-        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('active');
-            });
-        });
-        
-        // Add hover effect to feature cards
-        const featureCards = document.querySelectorAll('.feature-card');
-        featureCards.forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.1)';
-            });
-            
-            card.addEventListener('mouseleave', () => {
-                card.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.05)';
-            });
-        });
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Azamjon IELTS Prep. All rights reserved.</p>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                <a href="index.html" style="color: white; margin-right: 1rem;">Home</a>
+                <a href="courses.html" style="color: white; margin-right: 1rem;">Courses</a>
+                <a href="resources.html" style="color: white; margin-right: 1rem;">Resources</a>
+                <a href="blog.html" style="color: white;">Blog</a>
+            </p>
+        </div>
+    </footer>
+    
     <script src="script.js"></script>
 </body>
 </html>
